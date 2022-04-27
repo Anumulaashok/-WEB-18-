@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>backend</title>
+    <style>
+        #navbar
+        {
+            background-color: rgb(91, 91, 201);
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        
+        }
+        a{
+            text-decoration: none;
+            color:white ;
+            font-size: 30px;
+        }
+            </style>
+</head>
+<body>
+    <div id="navbar">
+        <div><a href="backend.html"> Backend</a></div>
+        <div><a href="frontend.html">Fronted</a></div>
+    </div>
+    <div id="backend">backend</div>
+    <form id="forms">
+        <input type="text" id="name" placeholder="enter name">
+        <input type="text" id="avatar" placeholder="entr img url">
+        <input type="text" id="logo" placeholder="entercompany logo url">
+        <input type="text" id="position" placeholder="enter role">
+        <input type="submit">
+    </form>
+</body>
+</html>
+
+
+<script>
+
+var form=document.getElementById("forms")
+form.addEventListener("submit",myfunction)
+
+var arr=JSON.parse(localStorage.getItem("masaidata"))||[];
+
+function myfunction(){
+    event.preventDefault()
+    
+
+
+var data={
+    name:forms.name.value,
+    img:forms.avatar.value,
+    role:forms.position.value,
+    logo:forms.logo.value
+}
+console.log(data)
+arr.push(data);
+localStorage.setItem("masaidata",JSON.stringify(arr))
+
+
+}
+
+</script>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fronted</title>
+    <style>
+         #navbar
+        {
+            background-color: rgb(91, 91, 201);
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        
+        }
+        a{
+            text-decoration: none;
+            color:white ;
+            font-size: 30px;
+        }
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #para
+        {
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+            padding: 30px;
+        }
+        #frontend
+        {   
+            width: 80%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-auto-rows: auto;
+            text-align: center;   
+            gap: 20px;
+        }
+        #frontend>div>img{
+            width: 100%;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        #frontend>div
+        {
+            border-radius: 10px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        img+h2
+        {
+           
+            font-size: 30px;
+            margin: 10px 0px 15px 0px;
+        }
+
+
+            </style>
+</head>
+<body>
+    <div id="navbar">
+        <div><a href="backend.html"> Backend</a></div>
+        <div><a href="frontend.html">Fronted</a></div>
+    </div>
+    <h2 id="para">Fronted</h2>
+    <div id="frontend"></div>
+</body>
+</html>
+
+<script>
+var some=JSON.parse(localStorage.getItem("masaidata"))
+
+var head=document.querySelector("#frontend")
+some.forEach(function(el){
+    
+    var box=document.createElement("div");
+
+    var investoravatar=document.createElement("img");
+    investoravatar.setAttribute("id","image")
+    investoravatar.setAttribute("src",el.img);
+
+    var investorname=document.createElement("h2");
+    investorname.innerText=el.name
+
+    var investorposition=document.createElement("p");
+    investorposition.innerText=el.role
+
+    var investorlogo=document.createElement("img")
+    investorlogo.style.width="40%"
+    investorlogo.setAttribute("src",el.logo)
+
+    box.append(investoravatar,investorname,investorposition,investorlogo)
+    console.log(box)
+    head.append(box);
+})
+</script>
