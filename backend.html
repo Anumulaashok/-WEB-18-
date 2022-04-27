@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>backend</title>
     <style>
+        #body
+        {
+            background-color: bisque;
+        }
         #navbar
         {
             background-color: rgb(91, 91, 201);
@@ -19,6 +23,34 @@
             color:white ;
             font-size: 30px;
         }
+        #para
+        {
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+            padding: 30px;
+        }
+        #forms
+        {
+            justify-content: space-around;
+            border: 1mm solid red;
+            padding: 20px;
+            width: 90%;
+            margin: auto;
+            background-color: antiquewhite;
+            /* justify-items: center; */
+        }
+        #forms>input
+        {
+            height: 20px;
+            width: 200px;
+            margin-left: 10px;
+        }
+        #forms>input:nth-child(5){
+            background-color: aqua;
+            height: 30px;
+            border-radius: 10px;
+        }
             </style>
 </head>
 <body>
@@ -26,7 +58,7 @@
         <div><a href="backend.html"> Backend</a></div>
         <div><a href="frontend.html">Fronted</a></div>
     </div>
-    <div id="backend">backend</div>
+    <h2 id="para">backend</h2>
     <form id="forms">
         <input type="text" id="name" placeholder="enter name">
         <input type="text" id="avatar" placeholder="entr img url">
